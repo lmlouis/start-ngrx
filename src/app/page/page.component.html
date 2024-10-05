@@ -1,0 +1,14 @@
+@if (isLoading$ | async;) {
+  <div>Chargement...</div>
+}
+
+@if (data$ | async;) {
+  @for (item of data$| async; track $index) {
+    <li>{{item}}</li>
+  }
+}
+
+@if (error$ | async;) {
+  <div>{{error$ | async}}</div>
+}
+
